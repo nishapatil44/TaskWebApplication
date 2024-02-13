@@ -14,15 +14,10 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/projects/create', function () {
-//     return view('add_project_view');
-// });
-// Route::get('/projects/edit', function () {
-//     return view('edit_project_view');
-// });
+Route::get('/', function () {
+    return redirect('projects/list');
+});
+
 Route::get('/projects/create',[ProjectController::class,'create'])->name('projects.create');
 Route::get('/projects/{id}/edit',[ProjectController::class,'edit'])->name('projects.edit');
 Route::get('/projects/{id}/delete',[ProjectController::class,'destroy'])->name('projects.delete');
